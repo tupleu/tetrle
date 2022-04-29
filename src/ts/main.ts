@@ -1087,11 +1087,11 @@ class Solution {
                         bag.push(new SolutionPiece(Type.L, 'C8', [Type.O]))
                         if(PC_end === 0) {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.S,Type.O]))
-                            return 'PCO'
+                            return 'FONZIE_PCO'
                         }
                         else {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise,I.clockwise], [Type.Z,Type.S]))
-                            return 'PCL'
+                            return 'FONZIE_PCL'
                         }
                     }
                     case 1: {
@@ -1104,11 +1104,11 @@ class Solution {
                         bag.push(new SolutionPiece(Type.L, 'C3', [Type.S]))
                         if(PC_end === 0) {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.S,Type.J]))
-                            return 'PCI'
+                            return 'FONZIE_PCI'
                         }
                         else {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise,I.clockwise], [Type.Z,Type.S]))
-                            return 'PCL2'
+                            return 'FONZIE_PCL2'
                         }
                     }
                     case 2: {
@@ -1121,11 +1121,11 @@ class Solution {
                         bag.push(new SolutionPiece(Type.O, 'A8', [Type.J]))
                         if(PC_end === 0) {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.S,Type.L,Type.J]))
-                            return 'PCO'
+                            return 'FONZIE_PCO'
                         }
                         else {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise,I.clockwise], [Type.Z,Type.S,Type.L]))
-                            return 'PCL'
+                            return 'FONZIE_PCL'
                         }
                     }
                     case 3: {
@@ -1139,11 +1139,11 @@ class Solution {
                         
                         if(PC_end === 0) {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.J,Type.O,Type.S,Type.L]))
-                            return 'PCO'
+                            return 'FONZIE_PCO'
                         }
                         else {
                             bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise,I.clockwise], [Type.Z,Type.J]))
-                            return 'PCL'
+                            return 'FONZIE_PCL'
                         }
                     }
                     case 4: {
@@ -1154,7 +1154,7 @@ class Solution {
                         bag.push(new SolutionPiece(Type.O, 'A2', [Type.L,Type.S]))
                         bag.push(new SolutionPiece(Type.I, 'A4', [Type.O,Type.J]))
                         bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.S,Type.L]))
-                        return 'PCI2'
+                        return 'FONZIE_PCI2'
                     }
                     case 5: {
                         bag.push(new SolutionPiece(Type.S, 'A2'))
@@ -1164,7 +1164,7 @@ class Solution {
                         bag.push(new SolutionPiece(Type.L, 'C8', [Type.O]))
                         bag.push(new SolutionPiece(Type.I, 'A4', [Type.J,Type.L]))
                         bag.push(new SolutionPiece(Type.T, [I.clockwise,I.right,I.drop,I.clockwise], [Type.Z,Type.S,Type.J,Type.O]))
-                        return 'PCI2'
+                        return 'FONZIE_PCI2'
                     }
                 }
                 break
@@ -1198,36 +1198,36 @@ class Solution {
         }
         return null
     }
-    private static TKI_Fonzie_PC(bag: SolutionPiece[], variation: string) {
+    private static TKI_Fonzie_PC6(bag: SolutionPiece[], variation: string) {
         switch(variation) {
-            case 'PCO': {
+            case 'FONZIE_PCO': {
                 bag.push(new SolutionPiece(Type.O, 'A6'))
                 //Add STSD
                 break
             }
-            case 'PCI': {
+            case 'FONZIE_PCI': {
                 bag.push(new SolutionPiece(Type.I, 'A6'))
                 break
             }
-            case 'PCI2': {
+            case 'FONZIE_PCI2': {
                 bag.push(new SolutionPiece(Type.I, 'A4'))
                 break
             }
-            case 'PCL': {
+            case 'FONZIE_PCL': {
                 bag.push(new SolutionPiece(Type.L, 'D6'))
                 break
             }
-            case 'PCL2': {
+            case 'FONZIE_PCL2': {
                 bag.push(new SolutionPiece(Type.L, 'C7'))
                 break
             }
         }
     }
     private static TKI_FlatTop(bag: SolutionPiece[]) {
-        const variation: number = 1 // Math.floor(Math.random() * 2)
+        const variation: number = 2 // Math.floor(Math.random() * 3)
         switch(variation) {
             case 0: { // LST
-                const variation2: number = Math.floor(Math.random() * 8)
+                const variation2: number = Math.floor(Math.random() * 9)
                 switch(variation2) {
                     case 0: { 
                         bag.push(new SolutionPiece(Type.Z, 'A4'))
@@ -1274,9 +1274,9 @@ class Solution {
                         bag.push(new SolutionPiece(Type.J, 'C5'))
                         bag.push(new SolutionPiece(Type.I, 'B10'))
                         bag.push(new SolutionPiece(Type.O, 'A8'))
-                        bag.push(new SolutionPiece(Type.Z, 'A7', [Type.O]))
+                        bag.push(new SolutionPiece(Type.Z, 'A7', [Type.O,Type.J]))
                         bag.push(new SolutionPiece(Type.L, 'A4', [Type.J]))
-                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.J,Type.I,Type.Z,Type.S,Type.O]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.T]))
                         break
                     }
                     case 5: {
@@ -1309,8 +1309,18 @@ class Solution {
                         bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.T]))
                         break
                     }
+                    case 8: { 
+                        bag.push(new SolutionPiece(Type.Z, 'A4'))
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.I, 'B10'))
+                        bag.push(new SolutionPiece(Type.O, 'A8'))
+                        bag.push(new SolutionPiece(Type.L, 'C7', [Type.O]))
+                        bag.push(new SolutionPiece(Type.J, 'A6', [Type.L,Type.Z]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.L,Type.I,Type.Z,Type.S,Type.O]))
+                        break
+                    }
                 }
-                return 'LST'
+                return 'FLAT_LST'
             }
             case 1: { // Imperial Cross
                 bag.push(new SolutionPiece(Type.J, 'D9'))
@@ -1320,13 +1330,69 @@ class Solution {
                 bag.push(new SolutionPiece(Type.O, 'A2'))
                 bag.push(new SolutionPiece(Type.L, 'C1', [Type.O]))
                 bag.push(new SolutionPiece(Type.T, [I.right,I.drop,I.right,I.counterclockwise,I.counterclockwise,I.counterclockwise], [Type.T]))
-                return 'IC'
+                return 'FLAT_IC'
+            }
+            case 2: { // 8-height PC
+                const variation2: number = 3//Math.floor(Math.random() * 3)
+                switch(variation2) {
+                    case 0: { 
+                        bag.push(new SolutionPiece(Type.Z, 'A4'))
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.I, 'B10'))
+                        bag.push(new SolutionPiece(Type.O, 'A8'))
+                        bag.push(new SolutionPiece(Type.L, 'C7', [Type.O]))
+                        bag.push(new SolutionPiece(Type.J, 'A7', [Type.L]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.L,Type.I,Type.Z,Type.S,Type.O]))
+                        return 'FLAT_8PC_S'
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.Z, 'A4'))
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.I, 'B7'))
+                        bag.push(new SolutionPiece(Type.L, 'A8'))
+                        bag.push(new SolutionPiece(Type.O, 'A8', [Type.L]))
+                        bag.push(new SolutionPiece(Type.J, 'C8', [Type.O]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.T]))
+                        return 'FLAT_8PC_S'
+                    }
+                    case 2: {
+                        bag.push(new SolutionPiece(Type.Z, 'A4'))
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.I, 'B7'))
+                        bag.push(new SolutionPiece(Type.J, 'A9'))
+                        bag.push(new SolutionPiece(Type.O, 'A9', [Type.J]))
+                        bag.push(new SolutionPiece(Type.L, 'C9', [Type.O]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.T]))
+                        return 'FLAT_8PC_S'
+                    }
+                    case 3: {
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.J, 'C5'))
+                        bag.push(new SolutionPiece(Type.I, 'B10'))
+                        bag.push(new SolutionPiece(Type.O, 'A8'))
+                        bag.push(new SolutionPiece(Type.Z, 'A7', [Type.O,Type.J]))
+                        bag.push(new SolutionPiece(Type.L, 'A4', [Type.J]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.T]))
+                        return 'FLAT_8PC_Z'
+                    }
+                    case 4: { 
+                        bag.push(new SolutionPiece(Type.Z, 'A4'))
+                        bag.push(new SolutionPiece(Type.S, 'D1'))
+                        bag.push(new SolutionPiece(Type.I, 'B10'))
+                        bag.push(new SolutionPiece(Type.O, 'A8'))
+                        bag.push(new SolutionPiece(Type.L, 'C7', [Type.O]))
+                        bag.push(new SolutionPiece(Type.J, 'A6', [Type.L,Type.Z]))
+                        bag.push(new SolutionPiece(Type.T, [I.das_left,I.right,I.counterclockwise,I.drop,I.counterclockwise], [Type.L,Type.I,Type.Z,Type.S,Type.O]))
+                        return 'FLAT_8PC_Z'
+                    }
+                }
+                break
             }
         }
         return null
     }
     private static TKI_FlatTop_IC(bag: SolutionPiece[]) {
-        const variation: number = 4 // Math.floor(Math.random() * 5)
+        const variation: number = Math.floor(Math.random() * 5)
         switch(variation) {
             case 0: {
                 bag.push(new SolutionPiece(Type.O, 'A4'))
@@ -1371,12 +1437,383 @@ class Solution {
         bag.push(new SolutionPiece(Type.O, 'A5', [Type.T]))
         bag.push(new SolutionPiece(Type.I, 'A5', [Type.O]))
     }
+    private static TKI_FlatTop_PC8(bag: SolutionPiece[], variation: string) {
+        switch(variation) {
+            case 'FLAT_8PC_S': {
+                const variation2: number = Math.floor(Math.random() * 3)
+                switch(variation2) {
+                    case 0: {
+                        bag.push(new SolutionPiece(Type.O, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'D3'))
+                        bag.push(new SolutionPiece(Type.L, 'A8'))
+                        bag.push(new SolutionPiece(Type.J, 'C1', [Type.O,Type.Z,Type.L,Type.S]))
+                        bag.push(new SolutionPiece(Type.I, 'A6', [Type.S,Type.L]))
+                        bag.push(new SolutionPiece(Type.T, null, [Type.T]))
+                        break
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'D3', [Type.J]))
+                        bag.push(new SolutionPiece(Type.T, 'C1', [Type.J,Type.Z]))
+                        bag.push(new SolutionPiece(Type.L, 'A8'))
+                        bag.push(new SolutionPiece(Type.I, 'A6', [Type.S,Type.L]))
+                        bag.push(new SolutionPiece(Type.O, null, [Type.O]))
+                        break
+                    }
+                    case 2: {
+                        bag.push(new SolutionPiece(Type.T, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'D3', [Type.T]))
+                        bag.push(new SolutionPiece(Type.L, 'C1', [Type.T,Type.Z]))
+                        bag.push(new SolutionPiece(Type.J, 'C6', [Type.S]))
+                        bag.push(new SolutionPiece(Type.O, 'A9'))
+                        bag.push(new SolutionPiece(Type.I, null, [Type.I]))
+                        break
+                    }
+                }
+                bag.push(new SolutionPiece(Type.S, 'B5'))
+                break
+            }
+            case 'FLAT_8PC_Z': {
+                const variation2: number = Math.floor(Math.random() * 5)
+                switch(variation2) {
+                    case 0: {
+                        bag.push(new SolutionPiece(Type.O, 'A1'))
+                        bag.push(new SolutionPiece(Type.J, 'B3'))
+                        bag.push(new SolutionPiece(Type.I, 'A1', [Type.O,Type.J]))
+                        bag.push(new SolutionPiece(Type.L, 'C5', [Type.S]))
+                        bag.push(new SolutionPiece(Type.T, null, [Type.T]))
+                        break
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.T, 'C2', [Type.J,Type.Z]))
+                        bag.push(new SolutionPiece(Type.I, 'A1', [Type.T,Type.J]))
+                        bag.push(new SolutionPiece(Type.L, 'C5', [Type.S]))
+                        bag.push(new SolutionPiece(Type.O, null, [Type.O]))
+                        break
+                    }
+                    case 2: {
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.T, 'C2', [Type.J,Type.Z]))
+                        bag.push(new SolutionPiece(Type.I, 'A1', [Type.L,Type.S]))
+                        bag.push(new SolutionPiece(Type.L, 'C5', [Type.S]))
+                        bag.push(new SolutionPiece(Type.O, null, [Type.O]))
+                        break
+                    }
+                    case 3: {
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.T, 'C1', [Type.J,Type.L]))
+                        bag.push(new SolutionPiece(Type.I, 'A4', [Type.L,Type.S]))
+                        bag.push(new SolutionPiece(Type.L, 'C3', [Type.J]))
+                        bag.push(new SolutionPiece(Type.O, null, [Type.O]))
+                        break
+                    }
+                    case 4: {
+                        bag.push(new SolutionPiece(Type.O, 'A1'))
+                        bag.push(new SolutionPiece(Type.L, 'C3'))
+                        bag.push(new SolutionPiece(Type.J, 'C1', [Type.O,Type.L,Type.S,Type.Z]))
+                        bag.push(new SolutionPiece(Type.I, 'A4', [Type.L,Type.S]))
+                        bag.push(new SolutionPiece(Type.T, null, [Type.T]))
+                        break
+                    }
+                }
+                bag.push(new SolutionPiece(Type.Z, 'B9'))
+                bag.push(new SolutionPiece(Type.S, 'A7', [Type.Z]))
+                break
+            }
+        }
+    }
     private static LST_TST(bag: SolutionPiece[]) {
         
     }
+    private static DPC(bag: SolutionPiece[]): string | null {
+        return null
+    }
+    private static DPC_2(bag: SolutionPiece[]) {
+
+    }
+    private static PC6(bag: SolutionPiece[]): string | null {
+        if(bag.length !== 1) { return null }
+        const piece = bag[0]
+        switch(piece.type) {
+            case Type.O: {
+                const variation: number = 0 // Math.floor(Math.random() * 2)
+                switch(variation) {
+                    case 0: {
+                        const variation2: number = 0 // Math.floor(Math.random() * 2)
+                        switch(variation2) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.I, 'D1'))
+                                bag.push(new SolutionPiece(Type.J, 'A2'))
+                                bag.push(new SolutionPiece(Type.Z, 'A4', [Type.J]))
+                                bag.push(new SolutionPiece(Type.S, 'B2', [Type.J]))
+                                bag.push(new SolutionPiece(Type.T, 'C3', [Type.Z,Type.S]))
+                                break
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.I, 'D1'))
+                                bag.push(new SolutionPiece(Type.T, 'A2'))
+                                bag.push(new SolutionPiece(Type.Z, 'A4', [Type.T]))
+                                bag.push(new SolutionPiece(Type.S, 'A3', [Type.Z]))
+                                bag.push(new SolutionPiece(Type.J, 'B2', [Type.S]))
+                                break
+                            }
+                        }
+                        const variation3: number = 0 // Math.floor(Math.random() * 7)
+                        switch(variation3) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.L, 'A8'))
+                                return 'PC6_O_LA8'
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.L, 'B9'))
+                                return 'PC6_O_LB9'
+                            }
+                            case 2: {
+                                bag.push(new SolutionPiece(Type.L, 'B8'))
+                                return 'PC6_O_LB8'
+                            }
+                            case 3: {
+                                bag.push(new SolutionPiece(Type.L, 'A7'))
+                                return 'PC6_O_LA7'
+                            }
+                            case 4: { // check if possible
+                                bag.push(new SolutionPiece(Type.L, 'D9'))
+                                return 'PC6_O_LD9'
+                            }
+                            case 5: {
+                                bag.push(new SolutionPiece(Type.L, 'C8'))
+                                return 'PC6_O_LC8'
+                            }
+                            case 6: {
+                                bag.push(new SolutionPiece(Type.L, 'D8'))
+                                return 'PC6_O_LD8'
+                            }
+                        }
+                        break
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.I, 'D1'))
+                        bag.push(new SolutionPiece(Type.L, 'A8'))
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'B10', [Type.L]))
+                        bag.push(new SolutionPiece(Type.S, 'B2', [Type.J]))
+                        const variation2: number = 0 // Math.floor(Math.random() * 11)
+                        switch(variation2) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.T, 'A5'))
+                                return 'PC6_O_TA5'
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.T, 'A4', [Type.J]))
+                                return 'PC6_O_TA4'
+                            }
+                            case 2: { //check if possible
+                                bag.push(new SolutionPiece(Type.T, 'A6', [Type.L]))
+                                return 'PC6_O_TA6'
+                            }
+                            case 3: {
+                                bag.push(new SolutionPiece(Type.T, 'D6'))
+                                return 'PC6_O_TD6'
+                            }
+                            case 4: {
+                                bag.push(new SolutionPiece(Type.T, 'B5'))
+                                return 'PC6_O_TB5'
+                            }
+                            case 5: {
+                                bag.push(new SolutionPiece(Type.T, 'D4', [Type.J]))
+                                return 'PC6_O_TD4'
+                            }
+                            case 6: {
+                                bag.push(new SolutionPiece(Type.T, 'B7', [Type.L]))
+                                return 'PC6_O_TB7'
+                            }
+                            case 7: {
+                                bag.push(new SolutionPiece(Type.T, 'C4', [Type.J]))
+                                return 'PC6_O_TC4'
+                            }
+                            case 8: {
+                                bag.push(new SolutionPiece(Type.T, 'C6', [Type.L]))
+                                return 'PC6_O_TC6'
+                            }
+                            case 9: {
+                                bag.push(new SolutionPiece(Type.T, 'C3', [Type.S]))
+                                return 'PC6_O_TC3'
+                            }
+                            case 10: {
+                                bag.push(new SolutionPiece(Type.T, 'C7', [Type.Z]))
+                                return 'PC6_O_TC7'
+                            }
+                        }
+                        break
+                    }
+                }
+                break
+            }
+            case Type.L: {
+                const variation: number = 0 // Math.floor(Math.random() * 2)
+                switch(variation) {
+                    case 0: {
+                        bag.push(new SolutionPiece(Type.I, 'D1'))
+                        bag.push(new SolutionPiece(Type.O, 'A2'))
+                        bag.push(new SolutionPiece(Type.Z, 'A7'))
+                        bag.push(new SolutionPiece(Type.S, 'B10', [Type.Z]))
+                        bag.push(new SolutionPiece(Type.J, 'C8', [Type.S]))
+                        const variation2: number = 0 // Math.floor(Math.random() * 6)
+                        switch(variation2) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.T, 'C4'))
+                                return 'PC6_L_TC4'
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.T, [I.drop,I.right]))
+                                return 'PC6_L_TA5'
+                            }
+                            case 2: {
+                                bag.push(new SolutionPiece(Type.T, 'B5'))
+                                return 'PC6_L_TB5'
+                            }
+                            case 3: {
+                                bag.push(new SolutionPiece(Type.T, [I.right,I.drop,I.right], [Type.J,Type.Z]))
+                                return 'PC6_L_TA6'
+                            }
+                            case 4: {
+                                bag.push(new SolutionPiece(Type.T, 'D4'))
+                                return 'PC6_L_TD4'
+                            }
+                            case 5: {
+                                bag.push(new SolutionPiece(Type.T, 'B4'))
+                                return 'PC6_L_TB4'
+                            }
+                        }
+                        break
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.I, 'B10'))
+                        bag.push(new SolutionPiece(Type.O, 'A8'))
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'A3', [Type.J]))
+                        bag.push(new SolutionPiece(Type.S, 'D1', [Type.J]))
+                        const variation2: number = 0 // Math.floor(Math.random() * 5)
+                        switch(variation2) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.T, 'D5', [Type.Z]))
+                                return 'PC6_L_T2D5'
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.T, 'C2', [Type.Z,Type.S]))
+                                return 'PC6_L_T2C2'
+                            }
+                            case 2: {
+                                bag.push(new SolutionPiece(Type.T, 'C5', [Type.Z]))
+                                return 'PC6_L_T2C5'
+                            }
+                            case 3: {
+                                bag.push(new SolutionPiece(Type.T, 'D6'))
+                                return 'PC6_L_T2D6'
+                            }
+                            case 4: {
+                                bag.push(new SolutionPiece(Type.T, 'B6'))
+                                return 'PC6_L_T2B6'
+                            }
+                        }
+                        break
+                    }
+                }
+                break
+            }
+            case Type.I: {
+                const variation: number = 0 // Math.floor(Math.random() * 2)
+                switch(variation) {
+                    case 0: {
+                        bag.push(new SolutionPiece(Type.O, 'A9'))
+                        bag.push(new SolutionPiece(Type.J, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'A3', [Type.J]))
+                        bag.push(new SolutionPiece(Type.S, 'D1', [Type.J]))
+                        const variation2: number = 0 // Math.floor(Math.random() * 12)
+                        switch(variation2) {
+                            case 0: {
+                                bag.push(new SolutionPiece(Type.T, 'D5', [Type.Z]))
+                                bag.push(new SolutionPiece(Type.L, 'B6'))
+                                return 'PC6_I_JOSZTD5LB6'
+                            }
+                            case 1: {
+                                bag.push(new SolutionPiece(Type.T, 'C2', [Type.Z,Type.S]))
+                                bag.push(new SolutionPiece(Type.L, 'C6'))
+                                return 'PC6_I_JOSZTC2LC6'
+                            }
+                            case 2: {
+                                bag.push(new SolutionPiece(Type.T, 'C2', [Type.Z,Type.S]))
+                                bag.push(new SolutionPiece(Type.L, 'A6'))
+                                return 'PC6_I_JOSZTC2LA6'
+                            }
+                            case 3: {
+                                bag.push(new SolutionPiece(Type.T, 'C2', [Type.Z,Type.S]))
+                                bag.push(new SolutionPiece(Type.L, 'A8', [Type.O]))
+                                return 'PC6_I_JOSZTC2LA8'
+                            }
+                            case 4: {
+                                bag.push(new SolutionPiece(Type.T, 'A6'))
+                                bag.push(new SolutionPiece(Type.L, 'C8', [Type.O,Type.T]))
+                                return 'PC6_I_JOSZTA6LC8'
+                            }
+                            case 5: {
+                                bag.push(new SolutionPiece(Type.T, 'A6'))
+                                bag.push(new SolutionPiece(Type.L, 'D7', [Type.T]))
+                                return 'PC6_I_JOSZTA6LD7'
+                            }
+                            case 6: {
+                                bag.push(new SolutionPiece(Type.T, 'D6'))
+                                bag.push(new SolutionPiece(Type.L, 'D4', [Type.Z]))
+                                return 'PC6_I_JOSZTD6LD4'
+                            }
+                            case 7: {
+                                bag.push(new SolutionPiece(Type.T, 'B7'))
+                                bag.push(new SolutionPiece(Type.L, 'D4', [Type.Z]))
+                                return 'PC6_I_JOSZTB7LD4'
+                            }
+                            case 8: {
+                                bag.push(new SolutionPiece(Type.T, 'C2', [Type.Z,Type.S]))
+                                bag.push(new SolutionPiece(Type.L, 'A5', [Type.Z]))
+                                return 'PC6_I_JOSZTC2LA5'
+                            }
+                            case 9: {
+                                bag.push(new SolutionPiece(Type.T, 'C6', [Type.L]))
+                                bag.push(new SolutionPiece(Type.L, 'A6'))
+                                return 'PC6_I_JOSZTC6LA6'
+                            }
+                            case 10: {
+                                bag.push(new SolutionPiece(Type.T, 'D5', [Type.Z]))
+                                bag.push(new SolutionPiece(Type.L, 'A8', [Type.O]))
+                                return 'PC6_I_JOSZTD5LA8'
+                            }
+                            case 11: {
+                                bag.push(new SolutionPiece(Type.T, 'D7'))
+                                bag.push(new SolutionPiece(Type.L, 'C5', [Type.Z]))
+                                return 'PC6_I_JOSZTD7LC5'
+                            }
+                        }
+                        break
+                    }
+                    case 1: {
+                        bag.push(new SolutionPiece(Type.O, 'A1'))
+                        bag.push(new SolutionPiece(Type.Z, 'A7'))
+                        bag.push(new SolutionPiece(Type.S, 'B10', [Type.Z]))
+                        bag.push(new SolutionPiece(Type.J, 'C8', [Type.S]))
+                        return 'PC6_I_JOSZ2'
+                    }
+                }
+                break
+            }
+        }
+        return null
+    }
+    private static PC6_2(bag: SolutionPiece[]) {
+
+    }
     static answer1(solution_pieces: Tetromino[]): Board { // TKI
         const flip = Math.random() < 0.5
-        const variation: number = 1
+        const variation: number = 0 // Math.floor(Math.random() * 5)
         var solution: Board = new Board()
         var bag: SolutionPiece[] = []
         Solution.TKI(bag, variation)
@@ -1399,57 +1836,71 @@ class Solution {
         if(rc === null) return solution
         var bag: SolutionPiece[] = []
         switch(rc){
-            case 'LST': {
+            case 'FLAT_LST': {
                 Solution.LST_TST(bag)
+                break
             }
-            case 'IC': {
+            case 'FLAT_IC': {
                 Solution.TKI_FlatTop_IC(bag)
+                break
             }
-            default: {
-                Solution.TKI_Fonzie_PC(bag, rc)
+            case 'FLAT_8PC_S':
+            case 'FLAT_8PC_Z': {
+                Solution.TKI_FlatTop_PC8(bag, rc)
+                rc = Solution.DPC(bag)
+                break
+            }
+            case 'FONZIE_PCO':
+            case 'FONZIE_PCI':
+            case 'FONZIE_PCI2':
+            case 'FONZIE_PCL':
+            case 'FONZIE_PCL2': {
+                Solution.TKI_Fonzie_PC6(bag, rc)
+                rc = Solution.PC6(bag)
+                break
             }
         }
         solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
         return solution
     }
-    static answer2(solution_pieces: Tetromino[]): Board { // DT Cannon
-        const flip = Math.random() < 0.5
-        var solution: Board = new Board()
-        var bag: SolutionPiece[] = []
-        bag.push(new SolutionPiece(Type.L, [I.das_left]))
-        bag.push(new SolutionPiece(Type.O, [I.das_right]))
-        bag.push(new SolutionPiece(Type.J, [I.right]))
-        bag.push(new SolutionPiece(Type.S, [I.das_left], [Type.L]))
-        bag.push(new SolutionPiece(Type.I, [I.counterclockwise, I.left]))
-        bag.push(new SolutionPiece(Type.Z, [I.right], [Type.J]))
-        bag.push(new SolutionPiece(Type.T, [I.right], [Type.Z]))
-        solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
-        return solution
-    }
-    static answer3(solution_pieces: Tetromino[]): Board { // DT Cannon extended
-        const flip = Math.random() < 0.5
-        var solution: Board = new Board()
-        var bag: SolutionPiece[] = []
-        bag.push(new SolutionPiece(Type.O, [I.das_left]))
-        bag.push(new SolutionPiece(Type.L, 'A4'))
-        bag.push(new SolutionPiece(Type.I, [I.right,I.clockwise]))
-        bag.push(new SolutionPiece(Type.S, 'A4', [Type.L]))
-        bag.push(new SolutionPiece(Type.T, 'A4', [Type.S]))
-        bag.push(new SolutionPiece(Type.J, [I.das_right]))
-        bag.push(new SolutionPiece(Type.Z, [I.das_right], [Type.J]))
-        solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
+    // static answer2(solution_pieces: Tetromino[]): Board { // DT Cannon
+    //     const flip = Math.random() < 0.5
+    //     var solution: Board = new Board()
+    //     var bag: SolutionPiece[] = []
+    //     bag.push(new SolutionPiece(Type.L, [I.das_left]))
+    //     bag.push(new SolutionPiece(Type.O, [I.das_right]))
+    //     bag.push(new SolutionPiece(Type.J, [I.right]))
+    //     bag.push(new SolutionPiece(Type.S, [I.das_left], [Type.L]))
+    //     bag.push(new SolutionPiece(Type.I, [I.counterclockwise, I.left]))
+    //     bag.push(new SolutionPiece(Type.Z, [I.right], [Type.J]))
+    //     bag.push(new SolutionPiece(Type.T, [I.right], [Type.Z]))
+    //     solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
+    //     return solution
+    // }
+    // static answer3(solution_pieces: Tetromino[]): Board { // DT Cannon extended
+    //     const flip = Math.random() < 0.5
+    //     var solution: Board = new Board()
+    //     var bag: SolutionPiece[] = []
+    //     bag.push(new SolutionPiece(Type.O, [I.das_left]))
+    //     bag.push(new SolutionPiece(Type.L, 'A4'))
+    //     bag.push(new SolutionPiece(Type.I, [I.right,I.clockwise]))
+    //     bag.push(new SolutionPiece(Type.S, 'A4', [Type.L]))
+    //     bag.push(new SolutionPiece(Type.T, 'A4', [Type.S]))
+    //     bag.push(new SolutionPiece(Type.J, [I.das_right]))
+    //     bag.push(new SolutionPiece(Type.Z, [I.das_right], [Type.J]))
+    //     solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
 
-        var bag: SolutionPiece[] = []
-        bag.push(new SolutionPiece(Type.J, [I.clockwise,I.das_left]))
-        bag.push(new SolutionPiece(Type.Z, [I.right]))
-        bag.push(new SolutionPiece(Type.O, [I.das_right, I.left]))
-        bag.push(new SolutionPiece(Type.L, [I.counterclockwise,I.left]))
-        bag.push(new SolutionPiece(Type.I, [I.clockwise,I.das_right]))
-        bag.push(new SolutionPiece(Type.S, [I.das_right], [Type.O,Type.I]))
-        bag.push(new SolutionPiece(Type.T, [I.clockwise,I.das_left,I.drop,I.counterclockwise,I.counterclockwise,I.down,I.counterclockwise], [Type.I,Type.L,Type.J]))
-        solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
-        return solution
-    }
+    //     var bag: SolutionPiece[] = []
+    //     bag.push(new SolutionPiece(Type.J, [I.clockwise,I.das_left]))
+    //     bag.push(new SolutionPiece(Type.Z, [I.right]))
+    //     bag.push(new SolutionPiece(Type.O, [I.das_right, I.left]))
+    //     bag.push(new SolutionPiece(Type.L, [I.counterclockwise,I.left]))
+    //     bag.push(new SolutionPiece(Type.I, [I.clockwise,I.das_right]))
+    //     bag.push(new SolutionPiece(Type.S, [I.das_right], [Type.O,Type.I]))
+    //     bag.push(new SolutionPiece(Type.T, [I.clockwise,I.das_left,I.drop,I.counterclockwise,I.counterclockwise,I.down,I.counterclockwise], [Type.I,Type.L,Type.J]))
+    //     solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
+    //     return solution
+    // }
     static answer4(solution_pieces: Tetromino[]): Board { // DT Cannon Perfect Clear
         const flip = Math.random() < 0.5
         var solution: Board = new Board()
@@ -1491,7 +1942,7 @@ class Solution {
         solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
         return solution
     }
-    private static PCO_block(bag: SolutionPiece[], position: number): void {
+    private static PC1_block(bag: SolutionPiece[], position: number): void {
         var temp: SolutionPiece[] = []
         switch(position % 4) {
             case 0: 
@@ -1579,7 +2030,7 @@ class Solution {
         }
         bag.push(...temp)
     }
-    private static PCO_triangle(bag: SolutionPiece[], position: number): void {
+    private static PC1_triangle(bag: SolutionPiece[], position: number): void {
         switch(position % 4) {
             case 0: {
                 bag.push(new SolutionPiece(Type.Z, [I.left]))
@@ -1604,7 +2055,7 @@ class Solution {
             }
         }
     }
-    private static PCO_fill(bag: SolutionPiece[], position: number): void {
+    private static PC1_fill(bag: SolutionPiece[], position: number): void {
         const variation: number = Math.floor(Math.random() * 15)
         switch(variation) {
             case 0: {
@@ -2035,7 +2486,7 @@ class Solution {
             }
         }
     }
-    private static PCO2(bag: SolutionPiece[], sum: number) {
+    private static PC2(bag: SolutionPiece[], sum: number) {
         //I=1, J=2, L=3, O=4, S=5, T=6, Z=7
         var temp: SolutionPiece[] = []
         switch(sum) {
@@ -2126,24 +2577,30 @@ class Solution {
         }
         bag.push(...temp)
     }
+    private static PC2_2(bag: SolutionPiece[], sum: number) {
+        //I=1, J=2, L=3, O=4, S=5, T=6, Z=7
+    }
     static answer5(solution_pieces: Tetromino[]): Board { // PCO
         const position: number = Math.floor(Math.random() * 4) // const position = 3
         // const flip = Math.random() < 0.5
         const flip = false
         var solution: Board = new Board()
         var bag: SolutionPiece[] = []
-        Solution.PCO_block(bag, position)
-        Solution.PCO_triangle(bag, position)
+        Solution.PC1_block(bag, position)
+        Solution.PC1_triangle(bag, position)
         solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
 
         var bag: SolutionPiece[] = []
-        Solution.PCO_fill(bag, position)
+        Solution.PC1_fill(bag, position)
         solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
-
         const sum = bag.sort((a,b) => a.type - b.type).reduce((a,b) => a*10+b.type,0)
         console.log('sum:',sum)
         var bag: SolutionPiece[] = []
-        Solution.PCO2(bag, sum)
+        Solution.PC2(bag, sum)
+        solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
+
+        var bag: SolutionPiece[] = []
+        Solution.PC2_2(bag, sum)
         solution = Solution.get_new_solution(solution, solution_pieces, bag, flip)
         return solution
     }
