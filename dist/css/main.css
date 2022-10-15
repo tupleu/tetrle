@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+}
+
+body, html {
+  margin: 0;
+  background: #111111;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100vw;
+}
+
+#board {
+  display: flex;
+  background: #111111;
+  max-width: max-content;
+  max-height: 100vh;
+  flex: 5 0 100%;
+}
+
+#grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 3%;
+  padding-top: 10em;
+  overflow: scroll;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.row {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: hidden;
+  justify-content: space-evenly;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  min-width: 5em;
+  min-height: 5em;
+  aspect-ratio: 1;
+  padding: 0.2em;
+}
+.tile:hover .tile-piece {
+  background: white;
+}
+
+.tile-label {
+  position: absolute;
+  top: 0.2em;
+  left: 0.4em;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  pointer-events: none;
+}
+
+.tile-piece {
+  max-width: 100%;
+  max-height: 100%;
+  background: #080808;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container #board {
+    flex: 0 1 0%;
+    max-height: 80vh;
+  }
+  .container #grid {
+    margin: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    padding-top: 0;
+    min-height: 0;
+    flex: 5 0 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
